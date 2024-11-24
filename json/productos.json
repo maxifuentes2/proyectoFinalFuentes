@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "Intel Core i9 14900KS",
+        "cantidad": 20,
+        "precio": 900
+    },
+    {
+        "nombre": "ASUS ROG Strix GeForce RTX 4090",
+        "cantidad": 8,
+        "precio": 3000
+    },
+    {
+        "nombre": "Zotac GeForce RTX 4060 Ti 16GB",
+        "cantidad": 31,
+        "precio": 550
+    },
+    {
+        "nombre": "Razer BLACKSHARK V2 PRO Wireless",
+        "cantidad": 3,
+        "precio": 300
+    },
+    {
+        "nombre": "Razer BlackWidow V4 Pro RGB",
+        "cantidad": 15,
+        "precio": 240
+    }
+]

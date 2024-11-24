@@ -7,18 +7,25 @@ body, h1, h2, p, input, button, form, div {
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: linear-gradient(150deg, #886eff, #aaaaaa);
-    height: 100vh;
+    min-height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 10px; 
+    flex-direction: column; 
+    height: 100%; 
 }
 
 main {
     background: #fff;
-    width: 600px;
+    width: 100%;
+    max-width: 600px; 
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    flex-grow: 1; 
 }
 
 main h1 {
@@ -157,4 +164,98 @@ div .producto {
     font-size: 18px;
     font-weight: bold;
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 90%; 
+        padding: 15px; 
+    }
+
+    main h1 {
+        font-size: 22px; 
+    }
+
+    main h2 {
+        font-size: 18px;
+    }
+
+    .botonesinput {
+        font-size: 14px; 
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+        height: 40px; 
+    }
+
+    .acciones input {
+        width: 50px;
+        font-size: 12px;
+    }
+
+    .acciones button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #lista-productos {
+        padding: 8px;
+    }
+
+    .producto {
+        padding: 8px;
+    }
+
+    .mensaje-vacio {
+        font-size: 16px; 
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: 95%; 
+        padding: 10px; 
+    }
+
+    main h1 {
+        font-size: 20px; 
+    }
+
+    main h2 {
+        font-size: 16px;
+    }
+
+    .botonesinput {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    button[type="submit"] {
+        font-size: 12px;
+        height: 35px; 
+    }
+
+    .acciones input {
+        width: 40px;
+        font-size: 10px;
+    }
+
+    .acciones button {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    #lista-productos {
+        padding: 6px;
+    }
+
+    .producto {
+        padding: 6px;
+    }
+
+    .mensaje-vacio {
+        font-size: 14px;
+    }
 }
