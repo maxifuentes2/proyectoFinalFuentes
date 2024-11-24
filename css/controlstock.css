@@ -1,0 +1,160 @@
+body, h1, h2, p, input, button, form, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(150deg, #886eff, #aaaaaa);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background: #fff;
+    width: 600px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+main h2 {
+    font-size: 20px;
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#formulario-producto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.botonesinput {
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.botonesinput:focus {
+    border-color: #886eff;
+}
+
+button[type="submit"] {
+    height: 45px;
+    background: #886eff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #5b49aa;
+}
+
+#lista-productos {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    min-height: 50px;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;  
+}
+
+.acciones input {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 60px;
+    font-size: 14px;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+.acciones input:focus {
+    border-color: #886eff;
+}
+
+.acciones button {
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.acciones .boton-quitar {
+    background-color: #ffc107;
+    border: 1px solid #ffa000;
+    color: #333;
+}
+
+.acciones .boton-quitar:hover {
+    background-color: #ff8f00;
+    border-color: #e65100;
+}
+
+.acciones .boton-eliminar {
+    background-color: #f44336;
+    border: 1px solid #e53935;
+    color: #fff;
+}
+
+.acciones .boton-eliminar:hover {
+    background-color: #d32f2f;
+    border-color: #c62828;
+}
+
+div .producto {
+    border-bottom: solid 1px silver;
+    padding: 10px 10px;
+}
+
+.acciones input.cantidad-quitar::-webkit-inner-spin-button {
+    -webkit-appearance: none;  
+    margin: 0;
+}
+
+.mensaje-vacio {
+    padding: 20px;
+    text-align: center;
+    color: #ff4d4d;
+    background-color: #ffe6e6;
+    border: 1px solid #ff4d4d;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}

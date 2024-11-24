@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/controlstock.css">
+    <script defer src="../js/controlstock.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Gestion de stock</title>
+</head>
+<body>
+    <main>
+        <h1>GESTIÓN DE STOCK TCHSHOP</h1>
+        <form id="formulario-producto">
+            <input class="botonesinput" type="text" id="nombre-producto" placeholder="Nombre del producto" required>
+            <input class="botonesinput" type="number" id="cantidad-producto" placeholder="Cantidad" required min="1">
+            <input class="botonesinput" type="number" id="precio-producto" placeholder="Precio" required min="0" step="0.01">
+            <button type="submit">Agregar Producto</button>
+        </form>
+        <h2>Lista de Productos:</h2>
+        <div id="lista-productos"></div>
+    </main>
+</body>
+</html>
