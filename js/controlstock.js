@@ -8,11 +8,12 @@ const precioProductoInput = document.getElementById('precio-producto');
 // función para cargar los productos desde el archivo JSON
 async function cargarProductosDesdeJSON() {
     try {
-        const response = await fetch('./data/productos.json'); 
+        const response = await fetch('../json/productos.json'); 
         const productos = await response.json(); 
+        return productos;  // Devolver los productos cargados desde JSON
     } catch (error) {
         console.error('Error al cargar el archivo JSON:', error);
-        return []; 
+        return [];  // Si hay un error, devolver un array vacío
     }
 }
 
@@ -23,6 +24,10 @@ async function obtenerProductos() {
         return JSON.parse(productosStorage);
     } else {
         const productosDesdeJSON = await cargarProductosDesdeJSON();
+        // Si no hay productos en el localStorage, guardamos los productos del JSON
+        if (productosDesdeJSON.length > 0) {
+            localStorage.setItem('productos', JSON.stringify(productosDesdeJSON));
+        }
         return productosDesdeJSON;
     }
 }
@@ -175,3 +180,4 @@ listaProductosElemento.addEventListener('click', (event) => {
 obtenerProductos().then(productos => {
     mostrarProductos(productos);
 });
+
