@@ -116,19 +116,37 @@ button[type="submit"]:hover {
     margin-top: 15px;  
 }
 
-.acciones input {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 5px;
-    width: 60px;
+.acciones input.cantidad-quitar {
+    background-color: #ffffff;
+    color: #000;  
+    border: solid 1px #c0c0c0;
+    border-radius: 25px;
     font-size: 14px;
+    padding: 8px 16px;
     text-align: center;
-    transition: border-color 0.3s;
+    width: 100%;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-.acciones input:focus {
-    border-color: #886eff;
+.acciones input.cantidad-quitar::placeholder {
+    color: #c0c0c0; 
+}
+
+.acciones input.cantidad-quitar:focus::placeholder {
+    color: transparent;  
+}
+
+.acciones input.cantidad-quitar:not(:placeholder-shown) {
+    color: #000;  
+}
+
+.acciones input.cantidad-quitar:focus {
+    outline: none;
+}
+
+.acciones input.cantidad-quitar::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .acciones button {
@@ -162,14 +180,18 @@ button[type="submit"]:hover {
     border-color: #c62828;
 }
 
-div .producto {
-    border-bottom: solid 1px silver;
-    padding: 10px 10px;
+.boton-agregar{
+    background-color: #78ff78;
+    border: solid 1px #c0c0c0;
 }
 
-.acciones input.cantidad-quitar::-webkit-inner-spin-button {
-    -webkit-appearance: none;  
-    margin: 0;
+.boton-agregar:hover{
+    background-color: #4dac4d;
+}
+
+div .producto {
+    border-bottom: solid 1px #c0c0c0;
+    padding: 10px 10px;
 }
 
 .mensaje-vacio {
@@ -209,7 +231,7 @@ div .producto {
     }
 
     .acciones input {
-        width: 50px;
+        width: 100%; 
         font-size: 12px;
     }
 
@@ -227,7 +249,19 @@ div .producto {
     }
 
     .mensaje-vacio {
-        font-size: 16px; 
+        font-size: 16px;
+    }
+
+    .acciones {
+        flex-wrap: wrap;  
+    }
+
+    .acciones input, .acciones button {
+        width: 100%; 
+    }
+
+    .acciones button {
+        margin-top: 10px; 
     }
 }
 
@@ -256,7 +290,7 @@ div .producto {
     }
 
     .acciones input {
-        width: 40px;
+        width: 100%;
         font-size: 10px;
     }
 

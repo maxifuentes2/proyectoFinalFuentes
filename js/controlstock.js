@@ -30,10 +30,10 @@ async function cargarProductosDesdeJSON() {
     try {
         const response = await fetch('../json/productos.json'); 
         const productos = await response.json(); 
-        return productos;  // Devolver los productos cargados desde JSON
+        return productos;  // devuelve los productos cargandolos desde el JSON
     } catch (error) {
         console.error('Error al cargar el archivo JSON:', error);
-        return [];  // Si hay un error, devolver un array vacío
+        return [];  // si hay un error devuelve un array vacio
     }
 }
 
@@ -44,7 +44,7 @@ async function obtenerProductos() {
         return JSON.parse(productosStorage);
     } else {
         const productosDesdeJSON = await cargarProductosDesdeJSON();
-        // Si no hay productos en el localStorage, guardamos los productos del JSON
+        // si no hay productos en el localstorage guardamos los productos del JSON
         if (productosDesdeJSON.length > 0) {
             localStorage.setItem('productos', JSON.stringify(productosDesdeJSON));
         }
@@ -74,12 +74,15 @@ function mostrarProductos(productos) {
             <div class="acciones">
                 <input type="number" class="cantidad-quitar" placeholder="Quitar" min="1" max="${producto.cantidad}">
                 <button class="boton-quitar" data-index="${index}">Quitar</button>
+                <input type="number" class="cantidad-quitar" placeholder="Agregar" min="1">
+                <button class="boton-agregar" data-index="${index}">Agregar</button>
                 <button class="boton-eliminar" data-index="${index}">Eliminar</button>
             </div>
         `;
         listaProductosElemento.appendChild(card);
     });
 }
+
 
 // actualiza el localStorage con el array de productos
 function actualizarStorage(productos) {
