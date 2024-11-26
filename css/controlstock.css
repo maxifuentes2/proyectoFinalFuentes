@@ -314,3 +314,31 @@ div .producto {
         font-size: 14px;
     }
 }
+
+#error-mensaje {
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: none;
+}
+
+#error-mensaje.mostrar {
+    display: block;
+}
+
+#error-mensaje button {
+    margin-left: 10px;
+    background-color: #ff4f4f;
+    color: white;
+    border: #c0c0c0 1px solid;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 10px;
+
+}
+#error-mensaje button:hover {
+    background-color: #ff3b3b;
+}
