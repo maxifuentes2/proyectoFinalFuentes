@@ -207,10 +207,11 @@ formularioProducto.addEventListener('submit', (event) => {
     });
 });
 
-// evento para quitar o eliminar productos desde los botones
+// evento para quitar, agregar o eliminar productos desde los botones
 listaProductosElemento.addEventListener('click', (event) => {
     obtenerProductos().then((productos) => {
         if (event.target.classList.contains('boton-quitar')) {
+            // Botón de quitar producto
             const index = event.target.getAttribute('data-index');
             const cantidadInput = event.target.previousElementSibling;
             const cantidadQuitar = parseInt(cantidadInput.value) || 0;
@@ -218,12 +219,42 @@ listaProductosElemento.addEventListener('click', (event) => {
                 quitarProducto(index, cantidadQuitar, productos);
                 cantidadInput.value = '';
             }
+        } else if (event.target.classList.contains('boton-agregar')) {
+            // Botón de agregar producto
+            const index = event.target.getAttribute('data-index');
+            const cantidadInput = event.target.previousElementSibling;
+            const cantidadAgregar = parseInt(cantidadInput.value) || 0;
+            if (cantidadAgregar > 0) {
+                agregarCantidadProducto(index, cantidadAgregar, productos);
+                cantidadInput.value = '';
+            }
         } else if (event.target.classList.contains('boton-eliminar')) {
+            // Botón de eliminar producto
             const index = event.target.getAttribute('data-index');
             eliminarProducto(index, productos);
         }
     });
 });
+
+// función para agregar cantidad a un producto existente
+function agregarCantidadProducto(index, cantidadAgregar, productos) {
+    const producto = productos[index];
+    if (producto) {
+        producto.cantidad += cantidadAgregar;
+        actualizarStorage(productos);
+        mostrarProductos(productos);
+
+        // SweetAlert de éxito
+        Swal.fire({
+            title: '¡Cantidad agregada!',
+            text: `Se han agregado ${cantidadAgregar} unidad(es) a "${producto.nombre}". Nueva cantidad: ${producto.cantidad}.`,
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            backdrop: false,
+        });
+    }
+}
+
 
 // inicializa la aplicación cargando productos desde el JSON o localStorage
 obtenerProductos().then((productos) => {
@@ -247,4 +278,3 @@ logoutButton.addEventListener('click', () => {
         }
     });
 });
-
