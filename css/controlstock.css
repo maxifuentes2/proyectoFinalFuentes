@@ -45,6 +45,24 @@ main h2 {
     text-align: center;
 }
 
+#logoutButton {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#logoutButton:hover {
+    background-color: #d32f2f;
+}
+
 #formulario-producto {
     display: flex;
     flex-direction: column;

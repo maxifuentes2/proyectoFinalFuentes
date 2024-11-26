@@ -1,3 +1,23 @@
+// verifica si iniciaste sesion
+const autenticado = localStorage.getItem('autenticado');
+
+if (autenticado !== 'true') {
+    // si no está autenticado redirige al login
+    Swal.fire({
+        title: '¡Acceso denegado!',
+        text: 'Debes iniciar sesión para acceder a esta página.',
+        icon: 'warning',
+        confirmButtonText: 'Ir al inicio',
+        backdrop: `
+            linear-gradient(150deg, #403864, #000000)
+        `,
+    }).then(() => {
+        window.location.href = '../index.html';
+    });
+}
+
+
+
 // busca y guarda los elementos del HTML que vamos a usar
 const listaProductosElemento = document.getElementById('lista-productos');
 const formularioProducto = document.getElementById('formulario-producto');
@@ -181,3 +201,22 @@ obtenerProductos().then(productos => {
     mostrarProductos(productos);
 });
 
+// cerrar sesión
+const logoutButton = document.getElementById('logoutButton');
+
+logoutButton.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Cerrar sesión',
+        text: '¿Estás seguro de que deseas cerrar sesión?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, cerrar sesión',
+        cancelButtonText: 'Cancelar',
+        backdrop: true,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.removeItem('autenticado');
+            window.location.href = '../index.html';
+        }
+    });
+});
